@@ -1,0 +1,12 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: order-openfeign
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public

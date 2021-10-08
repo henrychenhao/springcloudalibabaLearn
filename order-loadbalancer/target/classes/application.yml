@@ -1,0 +1,15 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: order-loadbalancer
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+    loadbalancer:
+      ribbon:
+        enabled: false

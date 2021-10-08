@@ -1,0 +1,19 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: order-ribbon
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+stock-nacos:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.henry.order.rule.CustomRule
+ribbon:
+  eager-load:
+    enabled: true
+    clients: stock-nacos
