@@ -13,6 +13,7 @@
         <module>order-ribbon</module>
         <module>order-loadbalancer</module>
         <module>order-openfeign</module>
+        <module>product-nacos</module>
     </modules>
     <name>springcloud-alibaba-parent</name>
     <description>Demo project for Spring Boot</description>

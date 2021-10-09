@@ -1,5 +1,6 @@
 package com.henry.order.ribbon.controller;
 
+import com.henry.order.ribbon.feign.ProductFeignService;
 import com.henry.order.ribbon.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +18,15 @@ public class OrderController {
     @Autowired
     StockFeignService stockFeignService;
 
+    @Autowired
+    ProductFeignService productFeignService;
+
     @RequestMapping("/add")
     public String add(){
         System.out.println("下单成功～～");
         String msg = stockFeignService.deduct();
-        return "hello openfeign "+msg;
+
+        String s = productFeignService.get(1);
+        return "hello openfeign "+msg+" productInfo: "+ s;
     }
 }
